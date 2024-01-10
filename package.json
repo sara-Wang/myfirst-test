@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "jest": "^29.7.0",
+    "puppeteer": "^21.4.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.1"
+  }
+}
