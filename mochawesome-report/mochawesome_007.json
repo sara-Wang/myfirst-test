@@ -1,0 +1,514 @@
+{
+  "stats": {
+    "suites": 11,
+    "tests": 10,
+    "passes": 0,
+    "pending": 0,
+    "failures": 10,
+    "start": "2024-01-05T07:30:07.773Z",
+    "end": "2024-01-05T07:33:40.491Z",
+    "duration": 212718,
+    "testsRegistered": 10,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "244a7a9b-ccd8-4c45-a47d-c7eff90c46cb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\2-advanced-examples\\cypress_api.cy.js",
+      "file": "cypress\\e2e\\2-advanced-examples\\cypress_api.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f55e6509-9f3d-4302-8b3f-414b71ab4778",
+          "title": "Cypress APIs",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "662af4f8-10c1-447d-9c93-4f3e80cc3561",
+              "title": "Cypress.Commands",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": ".add() - create a custom command",
+                  "fullTitle": "Cypress APIs Cypress.Commands .add() - create a custom command",
+                  "timedOut": null,
+                  "duration": 21211,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "Cypress.Commands.add('console', {\n  prevSubject: true\n}, (subject, method) => {\n  // the previous subject is automatically received\n  // and the commands arguments are shifted\n  // allow us to change the console method used\n  method = method || 'log';\n  // log the subject to the console\n  console[method]('The subject is', subject);\n  // whatever we return becomes the new subject\n  // we don't want to change the subject so\n  // we return whatever was passed in\n  return subject;\n});\ncy.get('button').console('info').then($button => {\n  // subject is still $button\n});",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.Commands`",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.Commands`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/cypress_api.cy.js:7:9)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                    "diff": null
+                  },
+                  "uuid": "5d12b1d8-681a-46e4-82d7-8a9836fad2b3",
+                  "parentUUID": "662af4f8-10c1-447d-9c93-4f3e80cc3561",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "5d12b1d8-681a-46e4-82d7-8a9836fad2b3"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 21211,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "85ffd1da-dc26-4fb1-9718-2df40af372ba",
+              "title": "Cypress.Cookies",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": ".debug() - enable or disable debugging",
+                  "fullTitle": "Cypress APIs Cypress.Cookies .debug() - enable or disable debugging",
+                  "timedOut": null,
+                  "duration": 21213,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "Cypress.Cookies.debug(true);\n// Cypress will now log in the console when\n// cookies are set or cleared\ncy.setCookie('fakeCookie', '123ABC');\ncy.clearCookie('fakeCookie');\ncy.setCookie('fakeCookie', '123ABC');\ncy.clearCookie('fakeCookie');\ncy.setCookie('fakeCookie', '123ABC');",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.Cookies`",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.Cookies`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/cypress_api.cy.js:39:9)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                    "diff": null
+                  },
+                  "uuid": "b842df5f-ffc8-41ea-880b-bf29def1af6b",
+                  "parentUUID": "85ffd1da-dc26-4fb1-9718-2df40af372ba",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "b842df5f-ffc8-41ea-880b-bf29def1af6b"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 21213,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "59d38658-7738-4fab-ac71-95f55347691c",
+              "title": "Cypress.arch",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get CPU architecture name of underlying OS",
+                  "fullTitle": "Cypress APIs Cypress.arch Get CPU architecture name of underlying OS",
+                  "timedOut": null,
+                  "duration": 21222,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/arch\nexpect(Cypress.arch).to.exist;",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.arch`",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.arch`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/cypress_api.cy.js:58:9)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                    "diff": null
+                  },
+                  "uuid": "0de370eb-5cc6-4cd0-8420-3ee313b9798a",
+                  "parentUUID": "59d38658-7738-4fab-ac71-95f55347691c",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "0de370eb-5cc6-4cd0-8420-3ee313b9798a"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 21222,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "ec6c65ef-a8c7-4715-8720-64dcca98fbbc",
+              "title": "Cypress.config()",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get and set configuration options",
+                  "fullTitle": "Cypress APIs Cypress.config() Get and set configuration options",
+                  "timedOut": null,
+                  "duration": 21229,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/config\nlet myConfig = Cypress.config();\nexpect(myConfig).to.have.property('animationDistanceThreshold', 5);\nexpect(myConfig).to.have.property('baseUrl', null);\nexpect(myConfig).to.have.property('defaultCommandTimeout', 4000);\nexpect(myConfig).to.have.property('requestTimeout', 5000);\nexpect(myConfig).to.have.property('responseTimeout', 30000);\nexpect(myConfig).to.have.property('viewportHeight', 660);\nexpect(myConfig).to.have.property('viewportWidth', 1000);\nexpect(myConfig).to.have.property('pageLoadTimeout', 60000);\nexpect(myConfig).to.have.property('waitForAnimations', true);\nexpect(Cypress.config('pageLoadTimeout')).to.eq(60000);\n// this will change the config for the rest of your tests!\nCypress.config('pageLoadTimeout', 20000);\nexpect(Cypress.config('pageLoadTimeout')).to.eq(20000);\nCypress.config('pageLoadTimeout', 60000);",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.config()`",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.config()`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/cypress_api.cy.js:69:9)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                    "diff": null
+                  },
+                  "uuid": "3f42197b-2747-4ffe-bc95-55d9ce424a91",
+                  "parentUUID": "ec6c65ef-a8c7-4715-8720-64dcca98fbbc",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "3f42197b-2747-4ffe-bc95-55d9ce424a91"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 21229,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "7069dff1-2acd-4c5c-834c-593036a7524f",
+              "title": "Cypress.dom",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": ".isHidden() - determine if a DOM element is hidden",
+                  "fullTitle": "Cypress APIs Cypress.dom .isHidden() - determine if a DOM element is hidden",
+                  "timedOut": null,
+                  "duration": 21236,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "let hiddenP = Cypress.$('.dom-p p.hidden').get(0);\nlet visibleP = Cypress.$('.dom-p p.visible').get(0);\n// our first paragraph has css class 'hidden'\nexpect(Cypress.dom.isHidden(hiddenP)).to.be.true;\nexpect(Cypress.dom.isHidden(visibleP)).to.be.false;",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.dom`",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.dom`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/cypress_api.cy.js:99:9)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                    "diff": null
+                  },
+                  "uuid": "43c4d779-48f0-4e9b-a0bc-cfe07a5e390d",
+                  "parentUUID": "7069dff1-2acd-4c5c-834c-593036a7524f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "43c4d779-48f0-4e9b-a0bc-cfe07a5e390d"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 21236,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "27a27eef-44ea-4c1a-9a3d-9371ddd949b2",
+              "title": "Cypress.env()",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get environment variables",
+                  "fullTitle": "Cypress APIs Cypress.env() Get environment variables",
+                  "timedOut": null,
+                  "duration": 21237,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/env\n// set multiple environment variables\nCypress.env({\n  host: 'veronica.dev.local',\n  api_server: 'http://localhost:8888/v1/'\n});\n// get environment variable\nexpect(Cypress.env('host')).to.eq('veronica.dev.local');\n// set environment variable\nCypress.env('api_server', 'http://localhost:8888/v2/');\nexpect(Cypress.env('api_server')).to.eq('http://localhost:8888/v2/');\n// get all environment variable\nexpect(Cypress.env()).to.have.property('host', 'veronica.dev.local');\nexpect(Cypress.env()).to.have.property('api_server', 'http://localhost:8888/v2/');",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.env()`",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.env()`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/cypress_api.cy.js:115:9)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                    "diff": null
+                  },
+                  "uuid": "8fe11637-d6b2-4ca6-b91c-2662d3e42625",
+                  "parentUUID": "27a27eef-44ea-4c1a-9a3d-9371ddd949b2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "8fe11637-d6b2-4ca6-b91c-2662d3e42625"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 21237,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "f707913c-6745-4e7f-a48f-816dbf70e61b",
+              "title": "Cypress.log",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Control what is printed to the Command Log",
+                  "fullTitle": "Cypress APIs Cypress.log Control what is printed to the Command Log",
+                  "timedOut": null,
+                  "duration": 21241,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/cypress-log",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.log`",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.log`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/cypress_api.cy.js:144:9)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                    "diff": null
+                  },
+                  "uuid": "9fcf3d97-c475-4215-8cd5-5b00c687673e",
+                  "parentUUID": "f707913c-6745-4e7f-a48f-816dbf70e61b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "9fcf3d97-c475-4215-8cd5-5b00c687673e"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 21241,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "5107a380-9cd4-48b3-9487-3faa7f2a0451",
+              "title": "Cypress.platform",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get underlying OS name",
+                  "fullTitle": "Cypress APIs Cypress.platform Get underlying OS name",
+                  "timedOut": null,
+                  "duration": 21208,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/platform\nexpect(Cypress.platform).to.be.exist;",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.platform`",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.platform`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/cypress_api.cy.js:154:9)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                    "diff": null
+                  },
+                  "uuid": "4e733068-ccdc-4a08-8a33-5ace6e5c75b9",
+                  "parentUUID": "5107a380-9cd4-48b3-9487-3faa7f2a0451",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "4e733068-ccdc-4a08-8a33-5ace6e5c75b9"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 21208,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "f10ab4ab-4578-48e3-a25f-af2063f6bbd4",
+              "title": "Cypress.version",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get current version of Cypress being run",
+                  "fullTitle": "Cypress APIs Cypress.version Get current version of Cypress being run",
+                  "timedOut": null,
+                  "duration": 21214,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/version\nexpect(Cypress.version).to.be.exist;",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.version`",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.version`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/cypress_api.cy.js:165:9)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                    "diff": null
+                  },
+                  "uuid": "403bfbdc-1da2-467c-ba29-4aa199f124ee",
+                  "parentUUID": "f10ab4ab-4578-48e3-a25f-af2063f6bbd4",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "403bfbdc-1da2-467c-ba29-4aa199f124ee"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 21214,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "4261278c-574f-475a-89fd-042e328d4c40",
+              "title": "Cypress.spec",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get current spec information",
+                  "fullTitle": "Cypress APIs Cypress.spec Get current spec information",
+                  "timedOut": null,
+                  "duration": 21227,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/spec\n// wrap the object so we can inspect it easily by clicking in the command log\ncy.wrap(Cypress.spec).should('include.keys', ['name', 'relative', 'absolute']);",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.spec`",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/cypress-api\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress.spec`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/cypress_api.cy.js:176:9)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                    "diff": null
+                  },
+                  "uuid": "88d0f058-0022-4ebc-822b-90c6ab53303c",
+                  "parentUUID": "4261278c-574f-475a-89fd-042e328d4c40",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "88d0f058-0022-4ebc-822b-90c6ab53303c"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 21227,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+import Tools from "./tools";
+
+describe("新建图文", () => {
+    beforeEach(() => {
+        let tools = new Tools();
+        tools.get_token();
+    });
+
+    it("新建图文", () => {
+        cy.request({
+            url: "https://dycharts.com/vis/dychart/v2/projects/?scope=default",
+            method: "get",
+        });
+    });
+});

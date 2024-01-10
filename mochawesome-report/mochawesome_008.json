@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-01-05T07:33:42.485Z",
+    "end": "2024-01-05T07:34:03.749Z",
+    "duration": 21264,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "e5cd0239-f8c8-4400-9d33-f2aef9c7019b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\2-advanced-examples\\files.cy.js",
+      "file": "cypress\\e2e\\2-advanced-examples\\files.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b47f4546-09fb-4906-acdc-8f63d60ae903",
+          "title": "Files",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cy.fixture() - load a fixture",
+              "fullTitle": "Files cy.fixture() - load a fixture",
+              "timedOut": null,
+              "duration": 21210,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/fixture\n// Instead of writing a response inline you can\n// use a fixture file's content.\n// when application makes an Ajax request matching \"GET **/comments/*\"\n// Cypress will intercept it and reply with the object in `example.json` fixture\ncy.intercept('GET', '**/comments/*', {\n  fixture: 'example.json'\n}).as('getComment');\n// we have code that gets a comment when\n// the button is clicked in scripts.js\ncy.get('.fixture-btn').click();\ncy.wait('@getComment').its('response.body').should('have.property', 'name').and('include', 'Using fixtures to represent data');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/commands/files\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Files`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/commands/files\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Files`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/files.cy.js:9:7)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                "diff": null
+              },
+              "uuid": "da16d186-0d51-4cd7-93fd-c26343fadfe5",
+              "parentUUID": "b47f4546-09fb-4906-acdc-8f63d60ae903",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.fixture() or require - load a fixture",
+              "fullTitle": "Files cy.fixture() or require - load a fixture",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// we are inside the \"function () { ... }\"\n// callback and can use test context object \"this\"\n// \"this.example\" was loaded in \"beforeEach\" function callback\nexpect(this.example, 'fixture in the test context').to.deep.equal(requiredExample);\n// or use \"cy.wrap\" and \"should('deep.equal', ...)\" assertion\ncy.wrap(this.example).should('deep.equal', requiredExample);",
+              "err": {},
+              "uuid": "26c1e990-92e4-489d-a6f0-d6a70369d994",
+              "parentUUID": "b47f4546-09fb-4906-acdc-8f63d60ae903",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "cy.readFile() - read file contents",
+              "fullTitle": "Files cy.readFile() - read file contents",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/readfile\n// You can read a file and yield its contents\n// The filePath is relative to your project's root.\ncy.readFile(Cypress.config('configFile')).then(config => {\n  expect(config).to.be.an('string');\n});",
+              "err": {},
+              "uuid": "e5462b1c-176c-4379-9b1d-17e3ae28c1ee",
+              "parentUUID": "b47f4546-09fb-4906-acdc-8f63d60ae903",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "cy.writeFile() - write to a file",
+              "fullTitle": "Files cy.writeFile() - write to a file",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/writefile\n// You can write to a file\n// Use a response from a request to automatically\n// generate a fixture file for use later\ncy.request('https://jsonplaceholder.cypress.io/users').then(response => {\n  cy.writeFile('cypress/fixtures/users.json', response.body);\n});\ncy.fixture('users').should(users => {\n  expect(users[0].name).to.exist;\n});\n// JavaScript arrays and objects are stringified\n// and formatted into text.\ncy.writeFile('cypress/fixtures/profile.json', {\n  id: 8739,\n  name: 'Jane',\n  email: 'jane@example.com'\n});\ncy.fixture('profile').should(profile => {\n  expect(profile.name).to.eq('Jane');\n});",
+              "err": {},
+              "uuid": "ab225e3a-89c3-4a12-83d0-687c24dc9b4f",
+              "parentUUID": "b47f4546-09fb-4906-acdc-8f63d60ae903",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "da16d186-0d51-4cd7-93fd-c26343fadfe5"
+          ],
+          "pending": [],
+          "skipped": [
+            "26c1e990-92e4-489d-a6f0-d6a70369d994",
+            "e5462b1c-176c-4379-9b1d-17e3ae28c1ee",
+            "ab225e3a-89c3-4a12-83d0-687c24dc9b4f"
+          ],
+          "duration": 21210,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

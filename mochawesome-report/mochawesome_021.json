@@ -1,0 +1,89 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-01-05T07:38:39.776Z",
+    "end": "2024-01-05T07:38:46.799Z",
+    "duration": 7023,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e200c7d5-830f-4aad-ad89-3dfb9c9a56ca",
+      "title": "",
+      "fullFile": "cypress\\e2e\\example\\find_el.cy.js",
+      "file": "cypress\\e2e\\example\\find_el.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "element location",
+          "fullTitle": "element location",
+          "timedOut": null,
+          "duration": 5252,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit(\"https://example.cypress.io/commands/querying\");\ncy.get(\"div.panel-head:nth-child(9) h1\").should(\"be.visible\");\ncy.contains(\"h1\", \"简历\").should(\"be.visible\");\ncy.get(\"div.panel-head h1\").last().should(\"be.visible\");\ncy.get(\"div.panel-head\").children(\"子集元素\");\nlet resume = cy.get(\"div.panel-head\").parents(\"你的父级元素选择器\").find(\"h1\").should(\"be.visible\");\n//同胞元素上下都行siblings\nlet resume_else = resume.siblings(\".panel\");\n//找上面一个元素 下面一个元素 然后点击\nresume_else.prev(\".click\");\nresume_else.next(\".click\");\n//滚动条 滚动到页面元素位置并输入hello\ncy.get(\"#inputEmail\").scrollIntoView().type(\"hello\");\n//滚动到最顶端和最底部 以及指定位置 或者页面百分比\ncy.scrollTo(\"top\");\ncy.scrollTo(\"bottom\");\ncy.scrollTo(0, 250);\ncy.scrollTo(\"0%\", \"50%\");\n//当前窗口当中的子窗口 滚动条\ncy.get(\"#scrollable-horizontal\").scrollIntoView().scrollTo(\"right\");\n//找到元素位置并滚动到对应位置,在 cy.scrollTo() 命令中添加 { ensureScrollable: false } 选项，这会让 Cypress 尝试滚动即使它认为元素不可滚动。\ncy.get(\"#scrollable-vertical\").scrollTo(\"center\");\ncy.get(\"#scrollable-vertical\").scrollTo(\"0\", \"80%\");\ncy.get(\".query-form\").within($form => {\n  cy.get(\"input:first\").type(\"username\");\n  cy.get(\"input:last\").type(\"123456\");\n  cy.contains(\"Submit\").click();\n  //或者使用submit()函数 submit一定是form表单元素才能调用\n  // cy.get(\".action-form\").submit();\n  //.dbclick 双击  .rightclick 右键单击\n  //选择所有多选项\n  cy.get('.action-checkboxes [type=\"checkbox\"]').not(\"[disabled]\").check();\n  cy.get('.action-multiple-checkboxes [type=\"checkbox\"]').check({\n    force: true\n  });\n  //取消选择所有多选项\n  cy.get('.action-checkboxes [type=\"checkbox\"]').not(\"[disabled]\").uncheck();\n  cy.get('.action-multiple-checkboxes [type=\"checkbox\"]').uncheck({\n    force: true\n  });\n  //只选择某个或者多个 则输入value值\n  cy.get('.action-checkboxes [type=\"checkbox\"]').check(\"checkbox3\", \"checkbox2\");\n  //单选\n  cy.get('.action-checkboxes [type=\"radio\"]').check(\"radio2\");\n  //下拉框 通过文本定位并选择\n  cy.get(\".action-select\").select(\"oranges\");\n  //或者下拉框 通过元素属性定位并多项选择\n  cy.get(\".action-select\").select([\"fr-oranges\"], [\"fr-banners\"]);\n  //命令行工具\n  // npx  cypress open可以打开浏览器选择脚本后进行执行脚本 或者run指定文件路径 npx cypress run --spec'\\cypress\\e2e\\index.cy.js'结束后会生成测试报告\n  // 添加上headed会打开浏览器图形界面  npx cypress run --spec \"cypress\\e2e\\index.cy.js\" --headed\n  //后面还可添加浏览器类型npx cypress run --spec \"cypress\\e2e\\index.cy.js\" --headed --browser=chrome\n  //或者让它一直运行 npx json-server --watch cypress/e2e/example/mock/data.json\n});",
+          "err": {
+            "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div.panel-head:nth-child(9) h1`, but never found it.",
+            "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div.panel-head:nth-child(9) h1`, but never found it.\n    at Context.eval (webpack://cypress/./cypress/e2e/example/find_el.cy.js:4:45)",
+            "diff": null
+          },
+          "uuid": "f74afa16-22e5-4b38-a602-281a92fb58ae",
+          "parentUUID": "e200c7d5-830f-4aad-ad89-3dfb9c9a56ca",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "f74afa16-22e5-4b38-a602-281a92fb58ae"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 5252,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

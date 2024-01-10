@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-01-05T09:15:01.520Z",
+    "end": "2024-01-05T09:15:03.309Z",
+    "duration": 1789,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "30166977-7fa9-49fb-960b-9613f70389e4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\example\\api\\testlogin.cy.js",
+      "file": "cypress\\e2e\\example\\api\\testlogin.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ef3e762e-7f6f-418d-8d36-61512fcabcb0",
+          "title": "接口登录",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "输入错误的密码，提示密码错误",
+              "fullTitle": "接口登录 输入错误的密码，提示密码错误",
+              "timedOut": null,
+              "duration": 129,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  url: \"https://dycharts.com/vis/auth/login\",\n  method: \"post\",\n  form: true,\n  body: {\n    username: \"13000000008\",\n    password: \"000001\"\n  }\n}).then(response => {\n  expect(response.body).to.have.property(\"message\", \"password_error\");\n});",
+              "err": {},
+              "uuid": "7c644dba-3e93-48f0-8aa5-296e2caa6469",
+              "parentUUID": "ef3e762e-7f6f-418d-8d36-61512fcabcb0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "输入正确的用户名和密码，可以登录成功",
+              "fullTitle": "接口登录 输入正确的用户名和密码，可以登录成功",
+              "timedOut": null,
+              "duration": 1627,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  url: \"https://dycharts.com/vis/auth/login\",\n  method: \"post\",\n  form: true,\n  body: {\n    username: \"13000000008\",\n    password: \"000008\"\n  }\n}).then(response => {\n  expect(response.body).to.have.property(\"message\", \"success\");\n  // .its(\"body\")\n  // .should(\"have.property\", \"message\", \"success\");\n});",
+              "err": {},
+              "uuid": "7080586a-b7eb-45d1-8315-9e021fb13c75",
+              "parentUUID": "ef3e762e-7f6f-418d-8d36-61512fcabcb0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7c644dba-3e93-48f0-8aa5-296e2caa6469",
+            "7080586a-b7eb-45d1-8315-9e021fb13c75"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1756,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

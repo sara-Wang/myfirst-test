@@ -1,0 +1,128 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-01-05T07:28:35.369Z",
+    "end": "2024-01-05T07:28:56.628Z",
+    "duration": 21259,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "e07c0066-dc8c-4c0c-8076-b85fed5dcb7a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\2-advanced-examples\\aliasing.cy.js",
+      "file": "cypress\\e2e\\2-advanced-examples\\aliasing.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "64fa2015-f7a2-406f-a247-d63960c4493d",
+          "title": "Aliasing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": ".as() - alias a DOM element for later use",
+              "fullTitle": "Aliasing .as() - alias a DOM element for later use",
+              "timedOut": null,
+              "duration": 21205,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/as\n// Alias a DOM element for use later\n// We don't have to traverse to the element\n// later in our code, we reference it with @\ncy.get('.as-table').find('tbody>tr').first().find('td').first().find('button').as('firstBtn');\n// when we reference the alias, we place an\n// @ in front of its name\ncy.get('@firstBtn').click();\ncy.get('@firstBtn').should('have.class', 'btn-success').and('contain', 'Changed');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/commands/aliasing\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Aliasing`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://example.cypress.io/commands/aliasing\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 104.22.10.239:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Aliasing`\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (http://localhost:57841/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (http://localhost:57841/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (http://localhost:57841/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57841/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:57841/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:57841/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:57841/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:57841/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:57841/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:57841/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/2-advanced-examples/aliasing.cy.js:5:7)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 104.22.10.239:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                "diff": null
+              },
+              "uuid": "2e31131b-4e7e-41a3-bb5f-2c8dd4d8aa0b",
+              "parentUUID": "64fa2015-f7a2-406f-a247-d63960c4493d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": ".as() - alias a route for later use",
+              "fullTitle": "Aliasing .as() - alias a route for later use",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Alias the route to wait for its response\ncy.intercept('GET', '**/comments/*').as('getComment');\n// we have code that gets a comment when\n// the button is clicked in scripts.js\ncy.get('.network-btn').click();\n// https://on.cypress.io/wait\ncy.wait('@getComment').its('response.statusCode').should('eq', 200);",
+              "err": {},
+              "uuid": "62201f35-1cf5-4a16-9eba-d6b1710f37ab",
+              "parentUUID": "64fa2015-f7a2-406f-a247-d63960c4493d",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2e31131b-4e7e-41a3-bb5f-2c8dd4d8aa0b"
+          ],
+          "pending": [],
+          "skipped": [
+            "62201f35-1cf5-4a16-9eba-d6b1710f37ab"
+          ],
+          "duration": 21205,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

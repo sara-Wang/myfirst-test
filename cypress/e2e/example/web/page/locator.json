@@ -1,0 +1,11 @@
+{
+  "loginPage":{
+    "homepageLoginButton":".login",
+    "accountLogin":".corner > .tip",
+    "passwordLogin":".change-type",
+    "username":"[name='username']",
+    "password":"[name='password']",
+    "submitLogin":"div.submit-btn"
+
+  }
+} 
